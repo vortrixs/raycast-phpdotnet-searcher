@@ -3,7 +3,7 @@
   "name": "php-documentation",
   "title": "PHP Documentation",
   "description": "Search for PHP documentation and open the relevant page in your browser.",
-  "icon": "extension-icon.png",
+  "icon": "extension_icon.png",
   "license": "MIT",
   "commands": [
     {
