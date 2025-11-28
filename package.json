@@ -10,13 +10,13 @@
       "name": "search-php-net",
       "title": "Search php.net",
       "description": "Search for documentation on php.net",
-      "mode": "view",
-      "subtitle": ""
+      "mode": "view"
     }
   ],
   "dependencies": {
     "@raycast/api": "^1.103.0",
-    "@raycast/utils": "^2.2.1"
+    "@raycast/utils": "^2.2.1",
+    "fuse.js": "^7.1.0"
   },
   "devDependencies": {
     "@raycast/eslint-config": "^2.0.4",
