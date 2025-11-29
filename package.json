@@ -8,7 +8,7 @@
   "commands": [
     {
       "name": "search-php-net",
-      "title": "Search php.net",
+      "title": "Search PHP Documentation",
       "description": "Search for documentation on php.net",
       "mode": "view"
     }
@@ -95,7 +95,8 @@
           "value": "zh"
         }
       ],
-      "default": "en"
+      "default": "en",
+      "required": true
     }
   ]
 }

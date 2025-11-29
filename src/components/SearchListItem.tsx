@@ -5,18 +5,17 @@ import { Definition } from "../interfaces";
 type Props = { definition: Definition };
 
 export default ({ definition }: Props) => {
-    const language = getPreferenceValues<Preferences>().language;
+  const language = getPreferenceValues<Preferences>().language;
 
-    return (
-        <List.Item
-            title={definition.name}
-            subtitle={`${definition.type} • ${definition.description}`}
-            
-            actions={
-                <ActionPanel>
-                    <Action.OpenInBrowser title="Open in Browser" url={buildUrl(definition, language)} />
-                </ActionPanel>
-            }
-        />
-    );
+  return (
+    <List.Item
+      title={definition.name}
+      subtitle={`${definition.type} • ${definition.description}`}
+      actions={
+        <ActionPanel>
+          <Action.OpenInBrowser title="Open in Browser" url={buildUrl(definition, language)} />
+        </ActionPanel>
+      }
+    />
+  );
 };
