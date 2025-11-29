@@ -7,7 +7,7 @@ type Props = { results: Definition[] | undefined; isLoading: boolean; setSearchT
 
 export default ({ results, isLoading, setSearchText }: Props) => {
     return (
-        <List isLoading={isLoading} onSearchTextChange={setSearchText} searchBarPlaceholder="Search npm packages…" throttle>
+        <List isLoading={isLoading} onSearchTextChange={setSearchText} searchBarPlaceholder="Search php.net..." throttle>
             <List.Section title="Results" subtitle={results?.length.toString()}>
                 {results?.map((definition) => <SearchListItem key={definition.id} definition={definition} />)}
             </List.Section>

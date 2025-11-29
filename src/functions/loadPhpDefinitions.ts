@@ -13,7 +13,6 @@ import { Definition, Preferences } from '../interfaces';
  * "class.datetimeimmutable":["DateTimeImmutable","The DateTimeImmutable class","phpdoc:classref"]
  */
 
-
 const loadDefinitions = (cache: Cache): { data: Definition[] | undefined, isLoading: boolean } => {
     const language = getPreferenceValues<Preferences>().language;
 

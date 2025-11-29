@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import loadDefinitions from "./functions/loadPhpDefinitions";
 import SearchList from "./components/SearchList";
 import Fuse from 'fuse.js'
+import { Definition } from "./interfaces";
 
 const cache = new Cache();
 
@@ -11,16 +12,23 @@ export default function Command() {
 
   const { data, isLoading } = loadDefinitions(cache);
 
+  const fuse = useMemo(() => {
+    if (!data) return null;
+
+    return new Fuse(data, { keys: ['name', 'methodName', 'description'], includeScore: true });
+  }, [data]);
+
   const results = useMemo(() => {
-    if (!data || searchText.trim() === "" || isLoading) return undefined;
+    if (!fuse || searchText.trim() === "") return undefined;
 
-    const fuse = new Fuse(data, { keys: ['name', 'methodName', 'description'], includeScore: true });
+    const searchResults = fuse.search(searchText);
 
-    return fuse
-      .search(searchText)
-      .sort((a, b) => (a.score ?? 0) - (b.score ?? 0))
+    if (searchResults.length === 0) return [{id: searchText, name: `Search for "${searchText}" on php.net`, type: 'no-result', description: '', tag: '',methodName: ''}];
+
+    return searchResults
+      .sort((resultA, resultB) => (resultA.score ?? 0) - (resultB.score ?? 0))
       .map(result => result.item);
-  }, [data, searchText, isLoading]);
+  }, [fuse, searchText]) satisfies Definition[] | undefined;
 
   return <SearchList results={results} isLoading={isLoading} setSearchText={setSearchText} />;
 }
