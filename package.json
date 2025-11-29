@@ -42,5 +42,60 @@
   "categories": [
     "Documentation",
     "Developer Tools"
+  ],
+  "preferences": [
+    {
+      "name": "language",
+      "type": "dropdown",
+      "title": "Language",
+      "description": "Select the language to use when searching for PHP documentation.",
+      "data": [
+        {
+          "title": "English",
+          "value": "en"
+        },
+        {
+          "title": "German",
+          "value": "de"
+        },
+        {
+          "title": "Spanish",
+          "value": "es"
+        },
+        {
+          "title": "French",
+          "value": "fr"
+        },
+        {
+          "title": "Italian",
+          "value": "it"
+        },
+        {
+          "title": "Japanese",
+          "value": "ja"
+        },
+        {
+          "title": "Brazilian Portuguese",
+          "value": "pt_BR"
+        },
+        {
+          "title": "Russian",
+          "value": "ru"
+        },
+        {
+          "title": "Turkish",
+          "value": "tr"
+        },
+        {
+          "title": "Ukrainian",
+          "value": "uk"
+        },
+        {
+          "title": "Chinese (Simplified)",
+          "value": "zh"
+        }
+      ],
+      "default": "en"
+    }
   ]
 }

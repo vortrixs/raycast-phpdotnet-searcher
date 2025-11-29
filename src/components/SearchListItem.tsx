@@ -1,6 +1,6 @@
 import { Action, ActionPanel, getPreferenceValues, List } from "@raycast/api";
 import buildUrl from "../functions/buildUrl";
-import { Definition, Preferences } from "../interfaces";
+import { Definition } from "../interfaces";
 
 type Props = { definition: Definition };
 

@@ -1,7 +1,7 @@
 import { useFetch } from '@raycast/utils';
 import type { Cache } from '@raycast/api';
 import { getPreferenceValues } from "@raycast/api";
-import { Definition, Preferences } from '../interfaces';
+import { Definition } from '../interfaces';
 
 /**
  * @see https://www.php.net/js/search.js
